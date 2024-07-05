@@ -34,23 +34,26 @@
             btnEditar = new ToolStripButton();
             btnExcluir = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            toolStripLabel1 = new ToolStripLabel();
+            lblTipoCadastro = new ToolStripLabel();
             menuStrip1 = new MenuStrip();
-            produtoToolStripMenuItem = new ToolStripMenuItem();
+            produtoMenuItem = new ToolStripMenuItem();
             mesaToolStripMenuItem = new ToolStripMenuItem();
-            funcionárioToolStripMenuItem = new ToolStripMenuItem();
-            statusStrip1 = new StatusStrip();
+            garcomMenuItem = new ToolStripMenuItem();
             pedidoToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            statusLabelPrincipal = new ToolStripStatusLabel();
+            pnlRegistros = new Panel();
             toolStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, toolStripLabel1 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, lblTipoCadastro });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(790, 25);
+            toolStrip1.Size = new Size(780, 25);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -64,6 +67,7 @@
             btnAdicionar.Padding = new Padding(0, 0, 10, 0);
             btnAdicionar.Size = new Size(30, 22);
             btnAdicionar.Text = "Cadastrar";
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // btnEditar
             // 
@@ -75,6 +79,7 @@
             btnEditar.Padding = new Padding(0, 0, 10, 0);
             btnEditar.Size = new Size(30, 22);
             btnEditar.Text = "Editar";
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
@@ -86,34 +91,35 @@
             btnExcluir.Padding = new Padding(0, 0, 10, 0);
             btnExcluir.Size = new Size(30, 22);
             btnExcluir.Text = "Excluir";
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 25);
             // 
-            // toolStripLabel1
+            // lblTipoCadastro
             // 
-            toolStripLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            toolStripLabel1.Name = "toolStripLabel1";
-            toolStripLabel1.Size = new Size(122, 22);
-            toolStripLabel1.Text = "Seja bem vindo!";
+            lblTipoCadastro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTipoCadastro.Name = "lblTipoCadastro";
+            lblTipoCadastro.Size = new Size(122, 22);
+            lblTipoCadastro.Text = "Seja bem vindo!";
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { produtoToolStripMenuItem, mesaToolStripMenuItem, funcionárioToolStripMenuItem, pedidoToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { produtoMenuItem, mesaToolStripMenuItem, garcomMenuItem, pedidoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(790, 24);
+            menuStrip1.Size = new Size(780, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
-            // produtoToolStripMenuItem
+            // produtoMenuItem
             // 
-            produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            produtoToolStripMenuItem.Size = new Size(62, 20);
-            produtoToolStripMenuItem.Text = "Produto";
-            produtoToolStripMenuItem.Click += produtoToolStripMenuItem_Click;
+            produtoMenuItem.Name = "produtoMenuItem";
+            produtoMenuItem.Size = new Size(62, 20);
+            produtoMenuItem.Text = "Produto";
+            produtoMenuItem.Click += produtoMenuItem_Click;
             // 
             // mesaToolStripMenuItem
             // 
@@ -121,19 +127,12 @@
             mesaToolStripMenuItem.Size = new Size(47, 20);
             mesaToolStripMenuItem.Text = "Mesa";
             // 
-            // funcionárioToolStripMenuItem
+            // garcomMenuItem
             // 
-            funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(61, 20);
-            funcionárioToolStripMenuItem.Text = "Garçom";
-            // 
-            // statusStrip1
-            // 
-            statusStrip1.Location = new Point(0, 428);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(790, 22);
-            statusStrip1.TabIndex = 2;
-            statusStrip1.Text = "statusStrip1";
+            garcomMenuItem.Name = "garcomMenuItem";
+            garcomMenuItem.Size = new Size(61, 20);
+            garcomMenuItem.Text = "Garçom";
+            garcomMenuItem.Click += garcomMenuItem_Click;
             // 
             // pedidoToolStripMenuItem
             // 
@@ -141,11 +140,35 @@
             pedidoToolStripMenuItem.Size = new Size(56, 20);
             pedidoToolStripMenuItem.Text = "Pedido";
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { statusLabelPrincipal });
+            statusStrip1.Location = new Point(0, 424);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(780, 26);
+            statusStrip1.TabIndex = 2;
+            statusStrip1.Text = "statusStrip";
+            // 
+            // statusLabelPrincipal
+            // 
+            statusLabelPrincipal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            statusLabelPrincipal.Name = "statusLabelPrincipal";
+            statusLabelPrincipal.Size = new Size(195, 21);
+            statusLabelPrincipal.Text = "Visualizando 0 registro(s)...";
+            // 
+            // pnlRegistros
+            // 
+            pnlRegistros.Location = new Point(3, 52);
+            pnlRegistros.Name = "pnlRegistros";
+            pnlRegistros.Size = new Size(787, 369);
+            pnlRegistros.TabIndex = 3;
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(790, 450);
+            Controls.Add(pnlRegistros);
             Controls.Add(statusStrip1);
             Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
@@ -160,6 +183,8 @@
             toolStrip1.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -168,15 +193,17 @@
 
         private ToolStrip toolStrip1;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem produtoToolStripMenuItem;
+        private ToolStripMenuItem produtoMenuItem;
         private ToolStripMenuItem mesaToolStripMenuItem;
-        private ToolStripMenuItem funcionárioToolStripMenuItem;
+        private ToolStripMenuItem garcomMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripButton btnAdicionar;
         private ToolStripButton btnEditar;
         private ToolStripButton btnExcluir;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripLabel toolStripLabel1;
+        private ToolStripLabel lblTipoCadastro;
         private ToolStripMenuItem pedidoToolStripMenuItem;
+        private ToolStripStatusLabel statusLabelPrincipal;
+        private Panel pnlRegistros;
     }
 }

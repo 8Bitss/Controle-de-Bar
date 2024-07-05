@@ -1,4 +1,4 @@
-﻿namespace ControleBar.Dominio
+﻿namespace ControleDeBar.Dominio.ModuloProduto
 {
     public class Produto
     {
