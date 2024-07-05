@@ -15,11 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleDeBar.WinApp", "Tel
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 Memória", "3.1 Memória", "{EB4103E5-9BA2-4A0A-A3F4-22215F19C5AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeBar.Infra.Memoria", "ControleDeBar.Infra.Memoria\ControleDeBar.Infra.Memoria.csproj", "{0637EDFB-E7FE-4A06-84DE-8D7BD3ECF200}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 Memória", "3.1 Memória", "{D8E01DE3-211D-4C51-8280-15886DACA4B5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeBar.Infra.Memoria", "ControleDeBar.Infra.Memoria\ControleDeBar.Infra.Memoria\ControleDeBar.Infra.Memoria.csproj", "{A5FF5C64-C7F7-4A92-B09E-F5452AD8D3F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleDeBar.Infra.Memoria", "ControleDeBar.Infra.Memoria\ControleDeBar.Infra.Memoria.csproj", "{0637EDFB-E7FE-4A06-84DE-8D7BD3ECF200}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

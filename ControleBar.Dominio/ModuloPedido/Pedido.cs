@@ -1,6 +1,6 @@
-﻿using ControleBar.Dominio.ModuloProduto;
+﻿using ControleDeBar.Dominio.ModuloProduto;
 
-namespace ControleBar.Dominio.ModuloPedido
+namespace ControleDeBar.Dominio.ModuloPedido
 {
     public class Pedido
     {
