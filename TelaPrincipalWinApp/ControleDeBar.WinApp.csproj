@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ControleBar.Dominio\ControleDeBar.Dominio.csproj" />
-    <ProjectReference Include="..\ControleDeBar.Infra\ControleDeBar.Infra.csproj" />
+    <ProjectReference Include="..\ControleDeBar.Infra.Memoria\ControleDeBar.Infra.Memoria.csproj" />
   </ItemGroup>
 
   <ItemGroup>
