@@ -1,4 +1,4 @@
-﻿namespace ControleBar.Dominio
+﻿namespace ControleBar.Dominio.ModuloGarcom
 {
     public class Garcom
     {

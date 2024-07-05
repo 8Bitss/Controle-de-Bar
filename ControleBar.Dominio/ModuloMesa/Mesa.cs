@@ -1,4 +1,7 @@
-﻿namespace ControleBar.Dominio
+﻿using ControleBar.Dominio.ModuloConta;
+using ControleBar.Dominio.ModuloPedido;
+
+namespace ControleBar.Dominio.ModuloMesa
 {
     public class Mesa
     {
