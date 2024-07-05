@@ -1,4 +1,4 @@
-﻿namespace ControleBar.Dominio
+﻿namespace ControleDeBar.Dominio.ModuloPedido
 {
     public class Pedido
     {
