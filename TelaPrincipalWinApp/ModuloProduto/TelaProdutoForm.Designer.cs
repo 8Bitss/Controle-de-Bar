@@ -34,8 +34,8 @@
             txtIdProduto = new TextBox();
             txtNomeProduto = new TextBox();
             txtPrecoProduto = new NumericUpDown();
-            button1 = new Button();
-            button2 = new Button();
+            btnGravar = new Button();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)txtPrecoProduto).BeginInit();
             SuspendLayout();
             // 
@@ -85,38 +85,40 @@
             // 
             // txtPrecoProduto
             // 
+            txtPrecoProduto.DecimalPlaces = 2;
             txtPrecoProduto.Location = new Point(160, 99);
             txtPrecoProduto.Name = "txtPrecoProduto";
             txtPrecoProduto.Size = new Size(120, 23);
             txtPrecoProduto.TabIndex = 2;
             // 
-            // button1
+            // btnGravar
             // 
-            button1.DialogResult = DialogResult.OK;
-            button1.Location = new Point(345, 169);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Gravar";
-            button1.UseVisualStyleBackColor = true;
+            btnGravar.DialogResult = DialogResult.OK;
+            btnGravar.Location = new Point(345, 169);
+            btnGravar.Name = "btnGravar";
+            btnGravar.Size = new Size(75, 23);
+            btnGravar.TabIndex = 4;
+            btnGravar.Text = "Gravar";
+            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
-            // button2
+            // btnCancelar
             // 
-            button2.DialogResult = DialogResult.Cancel;
-            button2.Location = new Point(426, 169);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            btnCancelar.DialogResult = DialogResult.Cancel;
+            btnCancelar.Location = new Point(426, 169);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 3;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // TelaProdutoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(542, 218);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnGravar);
             Controls.Add(txtPrecoProduto);
             Controls.Add(txtNomeProduto);
             Controls.Add(txtIdProduto);
@@ -139,7 +141,7 @@
         private TextBox txtIdProduto;
         private TextBox txtNomeProduto;
         private NumericUpDown txtPrecoProduto;
-        private Button button1;
-        private Button button2;
+        private Button btnGravar;
+        private Button btnCancelar;
     }
 }
