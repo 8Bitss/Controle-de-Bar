@@ -1,5 +1,4 @@
-﻿using ControleDeBar.Dominio.ModuloPedido;
-using ControleDeBar.Dominio.ModuloConta;
+﻿using ControleDeBar.Dominio.ModuloConta;
 
 namespace ControleDeBar.Dominio.ModuloMesa
 {

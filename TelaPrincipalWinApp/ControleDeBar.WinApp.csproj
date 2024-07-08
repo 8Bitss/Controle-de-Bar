@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="ModuloGarcom\" />
-    <Folder Include="ModuloConta\" />
     <Folder Include="ModuloMesa\" />
     <Folder Include="ModuloPedido\" />
   </ItemGroup>

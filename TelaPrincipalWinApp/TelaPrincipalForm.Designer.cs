@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipalForm));
             toolStrip1 = new ToolStrip();
             btnAdicionar = new ToolStripButton();
             btnEditar = new ToolStripButton();
@@ -39,7 +38,8 @@
             produtoMenuItem = new ToolStripMenuItem();
             mesaToolStripMenuItem = new ToolStripMenuItem();
             garcomMenuItem = new ToolStripMenuItem();
-            pedidoToolStripMenuItem = new ToolStripMenuItem();
+            contaMenuItem = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
             statusStrip1 = new StatusStrip();
             statusLabelPrincipal = new ToolStripStatusLabel();
             pnlRegistros = new Panel();
@@ -50,10 +50,14 @@
             // 
             // toolStrip1
             // 
+            toolStrip1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip1.ImageScalingSize = new Size(24, 24);
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, lblTipoCadastro });
-            toolStrip1.Location = new Point(0, 24);
+            toolStrip1.Location = new Point(0, 35);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(780, 25);
+            toolStrip1.RenderMode = ToolStripRenderMode.Professional;
+            toolStrip1.Size = new Size(780, 31);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -61,11 +65,13 @@
             // 
             btnAdicionar.DisplayStyle = ToolStripItemDisplayStyle.Image;
             btnAdicionar.Enabled = false;
-            btnAdicionar.Image = (Image)resources.GetObject("btnAdicionar.Image");
+            btnAdicionar.Font = new Font("Segoe UI", 12F);
+            btnAdicionar.Image = ControleDeBar.WinApp.Properties.Resources.btnAdicionar;
             btnAdicionar.ImageTransparentColor = Color.Magenta;
+            btnAdicionar.Margin = new Padding(1);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Padding = new Padding(0, 0, 10, 0);
-            btnAdicionar.Size = new Size(30, 22);
+            btnAdicionar.Size = new Size(38, 29);
             btnAdicionar.Text = "Cadastrar";
             btnAdicionar.Click += btnAdicionar_Click;
             // 
@@ -73,11 +79,12 @@
             // 
             btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
             btnEditar.Enabled = false;
-            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.Font = new Font("Segoe UI", 12F);
+            btnEditar.Image = ControleDeBar.WinApp.Properties.Resources.btnEditar;
             btnEditar.ImageTransparentColor = Color.Magenta;
             btnEditar.Name = "btnEditar";
             btnEditar.Padding = new Padding(0, 0, 10, 0);
-            btnEditar.Size = new Size(30, 22);
+            btnEditar.Size = new Size(38, 28);
             btnEditar.Text = "Editar";
             btnEditar.Click += btnEditar_Click;
             // 
@@ -85,60 +92,74 @@
             // 
             btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
             btnExcluir.Enabled = false;
-            btnExcluir.Image = (Image)resources.GetObject("btnExcluir.Image");
+            btnExcluir.Font = new Font("Segoe UI", 12F);
+            btnExcluir.Image = ControleDeBar.WinApp.Properties.Resources.btnExcluir;
             btnExcluir.ImageTransparentColor = Color.Magenta;
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Padding = new Padding(0, 0, 10, 0);
-            btnExcluir.Size = new Size(30, 22);
+            btnExcluir.Size = new Size(38, 28);
             btnExcluir.Text = "Excluir";
             btnExcluir.Click += btnExcluir_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 25);
+            toolStripSeparator1.Size = new Size(6, 31);
             // 
             // lblTipoCadastro
             // 
             lblTipoCadastro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTipoCadastro.Name = "lblTipoCadastro";
-            lblTipoCadastro.Size = new Size(122, 22);
+            lblTipoCadastro.Size = new Size(122, 28);
             lblTipoCadastro.Text = "Seja bem vindo!";
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { produtoMenuItem, mesaToolStripMenuItem, garcomMenuItem, pedidoToolStripMenuItem });
+            menuStrip1.BackColor = SystemColors.ControlLight;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { produtoMenuItem, mesaToolStripMenuItem, garcomMenuItem, contaMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(780, 24);
+            menuStrip1.Padding = new Padding(5);
+            menuStrip1.Size = new Size(780, 35);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
             // produtoMenuItem
             // 
+            produtoMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             produtoMenuItem.Name = "produtoMenuItem";
-            produtoMenuItem.Size = new Size(62, 20);
+            produtoMenuItem.Size = new Size(84, 25);
             produtoMenuItem.Text = "Produto";
             produtoMenuItem.Click += produtoMenuItem_Click;
             // 
             // mesaToolStripMenuItem
             // 
+            mesaToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             mesaToolStripMenuItem.Name = "mesaToolStripMenuItem";
-            mesaToolStripMenuItem.Size = new Size(47, 20);
+            mesaToolStripMenuItem.Size = new Size(62, 25);
             mesaToolStripMenuItem.Text = "Mesa";
             // 
             // garcomMenuItem
             // 
+            garcomMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             garcomMenuItem.Name = "garcomMenuItem";
-            garcomMenuItem.Size = new Size(61, 20);
+            garcomMenuItem.Size = new Size(81, 25);
             garcomMenuItem.Text = "Garçom";
             garcomMenuItem.Click += garcomMenuItem_Click;
             // 
-            // pedidoToolStripMenuItem
+            // contaMenuItem
             // 
-            pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
-            pedidoToolStripMenuItem.Size = new Size(56, 20);
-            pedidoToolStripMenuItem.Text = "Pedido";
+            contaMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripSeparator2 });
+            contaMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            contaMenuItem.Name = "contaMenuItem";
+            contaMenuItem.Size = new Size(67, 25);
+            contaMenuItem.Text = "Conta";
+            contaMenuItem.Click += contaMenuItem_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(57, 6);
             // 
             // statusStrip1
             // 
@@ -158,9 +179,10 @@
             // 
             // pnlRegistros
             // 
-            pnlRegistros.Location = new Point(3, 52);
+            pnlRegistros.BackColor = SystemColors.GradientInactiveCaption;
+            pnlRegistros.Location = new Point(3, 65);
             pnlRegistros.Name = "pnlRegistros";
-            pnlRegistros.Size = new Size(787, 369);
+            pnlRegistros.Size = new Size(787, 356);
             pnlRegistros.TabIndex = 3;
             // 
             // TelaPrincipalForm
@@ -178,7 +200,7 @@
             Name = "TelaPrincipalForm";
             Padding = new Padding(0, 0, 10, 0);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Controle de Bar";
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             menuStrip1.ResumeLayout(false);
@@ -202,8 +224,9 @@
         private ToolStripButton btnExcluir;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel lblTipoCadastro;
-        private ToolStripMenuItem pedidoToolStripMenuItem;
+        private ToolStripMenuItem contaMenuItem;
         private ToolStripStatusLabel statusLabelPrincipal;
         private Panel pnlRegistros;
+        private ToolStripSeparator toolStripSeparator2;
     }
 }

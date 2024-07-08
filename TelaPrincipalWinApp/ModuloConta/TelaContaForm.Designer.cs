@@ -1,6 +1,6 @@
 ﻿namespace ControleDeBar.WinApp.ModuloConta
 {
-    partial class TelaCadastroConta
+    partial class TelaContaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -102,6 +102,7 @@
             btnGravar.TabIndex = 6;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 

@@ -1,10 +1,14 @@
 #region Import dos Modulos
+using ControleDeBar.WinApp.Compartilhado;
+
+using ControleDeBar.WinApp.ModuloGarcom;
 using ControleDeBar.Dominio.ModuloGarcom;
 using ControleDeBar.Infra.Memoria.ModuloGarcom;
-using ControleDeBar.WinApp.ModuloGarcom;
-#endregion
 
-using ControleDeBar.WinApp.Compartilhado;
+using ControleDeBar.WinApp.ModuloConta;
+using ControleDeBar.Dominio.ModuloConta;
+using ControleDeBar.Infra.Memoria.ModuloConta;
+#endregion
 
 namespace TelaPrincipalWinApp
 {
@@ -14,6 +18,7 @@ namespace TelaPrincipalWinApp
 
         #region Repositórios
         IRepositorioGarcom repositorioGarcom;
+        IRepositorioConta repositorioConta;
         #endregion
 
         public static TelaPrincipalForm Instancia { get; private set; }
@@ -26,6 +31,7 @@ namespace TelaPrincipalWinApp
 
             #region Instancias de Repositorio
             repositorioGarcom = new RepositorioGarcomEmMemoria();
+            repositorioConta = new RepositorioContaEmMemoria();
             #endregion
         }
 
@@ -34,21 +40,17 @@ namespace TelaPrincipalWinApp
             statusLabelPrincipal.Text = texto;
         }
 
-        #region Botão Adicionar
+        #region Botões CRUD
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             controlador.Adicionar();
         }
-        #endregion
 
-        #region Botão Editar
         private void btnEditar_Click(object sender, EventArgs e)
         {
             controlador.Editar();
         }
-        #endregion
 
-        #region Botão Excluir
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             controlador.Excluir();
@@ -69,8 +71,16 @@ namespace TelaPrincipalWinApp
 
             ConfigurarTelaPrincipal(controlador);
         }
+
+        private void contaMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorConta(repositorioConta, repositorioGarcom);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
         #endregion
 
+        #region Configurações Gerais
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
         {
             lblTipoCadastro.Text = "Cadastro de " + controladorSelecionado.TipoCadastro;
@@ -100,7 +110,10 @@ namespace TelaPrincipalWinApp
             btnAdicionar.Enabled = controladorSelecionado is ControladorBase;
             btnEditar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
+
+            ConfigurarToolTips(controladorSelecionado);
         }
+        #endregion
     }
 }
     
