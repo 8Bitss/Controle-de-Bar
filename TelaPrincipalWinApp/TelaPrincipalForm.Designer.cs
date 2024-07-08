@@ -178,7 +178,7 @@
             Name = "TelaPrincipalForm";
             Padding = new Padding(0, 0, 10, 0);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cadastro de Produtos";
+            Text = "Controle de Bar";
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             menuStrip1.ResumeLayout(false);
