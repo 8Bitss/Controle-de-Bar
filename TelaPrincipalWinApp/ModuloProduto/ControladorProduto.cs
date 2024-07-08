@@ -1,7 +1,5 @@
-﻿using ControleDeBar.Dominio.ModuloGarcom;
-using ControleDeBar.Dominio.ModuloProduto;
+﻿using ControleDeBar.Dominio.ModuloProduto;
 using ControleDeBar.WinApp.Compartilhado;
-using ControleDeBar.WinApp.ModuloGarcom;
 using TelaPrincipalWinApp;
 
 
