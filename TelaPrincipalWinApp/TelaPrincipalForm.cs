@@ -10,6 +10,11 @@ using ControleDeBar.Dominio.ModuloConta;
 using ControleDeBar.Infra.Memoria.ModuloConta;
 #endregion
 
+using ControleDeBar.WinApp.Compartilhado;
+using ControleDeBar.Dominio.ModuloProduto;
+using ControleDeBar.Infra.Memoria.ModuloProduto;
+using ControleDeBar.WinApp.ModuloProduto;
+
 namespace TelaPrincipalWinApp
 {
     public partial class TelaPrincipalForm : Form
@@ -18,6 +23,7 @@ namespace TelaPrincipalWinApp
 
         #region Repositórios
         IRepositorioGarcom repositorioGarcom;
+        IRepositorioProduto repositorioProduto;
         IRepositorioConta repositorioConta;
         #endregion
 
@@ -32,6 +38,7 @@ namespace TelaPrincipalWinApp
             #region Instancias de Repositorio
             repositorioGarcom = new RepositorioGarcomEmMemoria();
             repositorioConta = new RepositorioContaEmMemoria();
+            repositorioProduto = new RepositorioProdutoEmMemoria();
             #endregion
         }
 
@@ -60,9 +67,8 @@ namespace TelaPrincipalWinApp
         #region Botões do Menu Strip
         private void produtoMenuItem_Click(object sender, EventArgs e)
         {
-            btnAdicionar.ToolTipText = "Cadastrar Produto";
-            btnEditar.ToolTipText = "Editar Produto";
-            btnExcluir.ToolTipText = "Excluir Produto";
+            controlador = new ControladorProduto(repositorioProduto);
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void garcomMenuItem_Click(object sender, EventArgs e)
@@ -116,4 +122,3 @@ namespace TelaPrincipalWinApp
         #endregion
     }
 }
-    
