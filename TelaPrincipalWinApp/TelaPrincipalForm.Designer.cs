@@ -43,6 +43,9 @@
             statusStrip1 = new StatusStrip();
             statusLabelPrincipal = new ToolStripStatusLabel();
             pnlRegistros = new Panel();
+            btnEditarPedido = new ToolStripButton();
+            btnConcluirPedido = new ToolStripButton();
+            btnAdicionarPedido = new ToolStripButton();
             toolStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -53,7 +56,7 @@
             toolStrip1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip1.ImageScalingSize = new Size(24, 24);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, lblTipoCadastro });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, lblTipoCadastro, btnAdicionarPedido, btnConcluirPedido, btnEditarPedido });
             toolStrip1.Location = new Point(0, 35);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.RenderMode = ToolStripRenderMode.Professional;
@@ -185,6 +188,42 @@
             pnlRegistros.Size = new Size(787, 356);
             pnlRegistros.TabIndex = 3;
             // 
+            // btnEditarPedido
+            // 
+            btnEditarPedido.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnEditarPedido.Enabled = false;
+            btnEditarPedido.Font = new Font("Segoe UI", 12F);
+            btnEditarPedido.Image = ControleDeBar.WinApp.Properties.Resources.btnAtualizarPedido;
+            btnEditarPedido.ImageTransparentColor = Color.Magenta;
+            btnEditarPedido.Name = "btnEditarPedido";
+            btnEditarPedido.Padding = new Padding(0, 0, 10, 0);
+            btnEditarPedido.Size = new Size(38, 28);
+            btnEditarPedido.Text = "Excluir";
+            // 
+            // btnConcluirPedido
+            // 
+            btnConcluirPedido.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnConcluirPedido.Enabled = false;
+            btnConcluirPedido.Font = new Font("Segoe UI", 12F);
+            btnConcluirPedido.Image = ControleDeBar.WinApp.Properties.Resources.btnConcluirPedido;
+            btnConcluirPedido.ImageTransparentColor = Color.Magenta;
+            btnConcluirPedido.Name = "btnConcluirPedido";
+            btnConcluirPedido.Padding = new Padding(0, 0, 10, 0);
+            btnConcluirPedido.Size = new Size(38, 28);
+            btnConcluirPedido.Text = "Excluir";
+            // 
+            // btnAdicionarPedido
+            // 
+            btnAdicionarPedido.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnAdicionarPedido.Enabled = false;
+            btnAdicionarPedido.Font = new Font("Segoe UI", 12F);
+            btnAdicionarPedido.Image = ControleDeBar.WinApp.Properties.Resources.btnAdicionarPedido;
+            btnAdicionarPedido.ImageTransparentColor = Color.Magenta;
+            btnAdicionarPedido.Name = "btnAdicionarPedido";
+            btnAdicionarPedido.Padding = new Padding(0, 0, 10, 0);
+            btnAdicionarPedido.Size = new Size(38, 28);
+            btnAdicionarPedido.Text = "Excluir";
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -228,5 +267,8 @@
         private ToolStripStatusLabel statusLabelPrincipal;
         private Panel pnlRegistros;
         private ToolStripSeparator toolStripSeparator2;
+        private ToolStripButton btnAdicionarPedido;
+        private ToolStripButton btnConcluirPedido;
+        private ToolStripButton btnEditarPedido;
     }
 }

@@ -12,6 +12,7 @@ namespace ControleDeBar.Dominio.ModuloConta
 
         public Garcom Garcom { get; set; }
         public Mesa Mesa { get; set; }
+        public Pedido Pedido { get; set; }
 
         public Conta(string nomeCliente, Garcom garcom)
         {
@@ -28,6 +29,7 @@ namespace ControleDeBar.Dominio.ModuloConta
             ValorTotal = atualizada.ValorTotal;
             Garcom = atualizada.Garcom;
             Mesa = atualizada.Mesa;
+            Pedido = atualizada.Pedido;
         }
 
         public override List<string> Validar()

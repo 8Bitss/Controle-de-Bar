@@ -6,7 +6,7 @@ using TelaPrincipalWinApp;
 
 namespace ControleDeBar.WinApp.ModuloConta
 {
-    public class ControladorConta : ControladorBase
+    public class ControladorConta : ControladorBase, IControladorPedido
     {
         private IRepositorioConta repositorioConta;
         private IRepositorioGarcom repositorioGarcom;
@@ -136,6 +136,21 @@ namespace ControleDeBar.WinApp.ModuloConta
             CarregarContas();
 
             return tabelaConta;
+        }
+
+        public void AdicionarPedido()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarPedido()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ConcluirPedido()
+        {
+            throw new NotImplementedException();
         }
 
         private void CarregarContas()
