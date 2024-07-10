@@ -6,43 +6,60 @@ namespace ControleDeBar.Dominio.ModuloConta
 {
     public class Conta : EntidadeBase
     {
-        public string NomeCliente { get; set; }
-        public bool Status { get; set; }
-        public decimal ValorTotal { get; set; }
-
-        public Garcom Garcom { get; set; }
+        public string Titular { get; set; }
         public Mesa Mesa { get; set; }
-        public Pedido Pedido { get; set; }
+        public Garcom Garcom { get; set; }
+        public bool EstaAberta { get; set; }
+        public DateTime Abertura { get; set; }
+        public List<Pedido> Pedidos { get; set; }
+
+        public decimal ValorTotal { get; set; }
 
         public Conta(string nomeCliente, Garcom garcom)
         {
-            NomeCliente = nomeCliente;
+            Titular = nomeCliente;
             Garcom = garcom;
+            EstaAberta = true;
+            Abertura = DateTime.Now;
+
+            Pedidos = new List<Pedido>();
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
             Conta atualizada = (Conta)novoRegistro;
 
-            NomeCliente = atualizada.NomeCliente; 
-            Status = atualizada.Status;
+            Titular = atualizada.Titular; 
+            EstaAberta = atualizada.EstaAberta;
             ValorTotal = atualizada.ValorTotal;
             Garcom = atualizada.Garcom;
             Mesa = atualizada.Mesa;
-            Pedido = atualizada.Pedido;
+            Pedidos = atualizada.Pedidos;
         }
 
         public override List<string> Validar()
         {
             List<string> erros = new List<string>();
 
-            if (string.IsNullOrEmpty(NomeCliente.Trim()))
+            if (string.IsNullOrEmpty(Titular.Trim()))
                 erros.Add("O campo \"nome\" é obrigatório");
 
             if(Garcom == null)
                 erros.Add("O campo \"Garçom\" é obrigatório");
 
             return erros;
+        }
+
+        public void AdicionarPedido(Pedido pedidoSelecionado)
+        {
+            Pedidos.Add(pedidoSelecionado);
+            ValorTotal += pedidoSelecionado.Produto.Preco * pedidoSelecionado.QtdProduto;
+        }
+
+        public void RemoverPedido(Pedido pedidoSelecionado)
+        {
+            Pedidos.Remove(pedidoSelecionado);
+            ValorTotal = ValorTotal - pedidoSelecionado.Produto.Preco * pedidoSelecionado.QtdProduto;
         }
     }
 }

@@ -118,94 +118,97 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAdicionarPedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnAdicionarPedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnReverterAcao" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnReverterAcao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAdicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnAdicionar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnExcluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnExcluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnFiltrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnFiltrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnVisualizarAlugueis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnVisualizarAlugueis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnVisualizarDetalhes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnVisualizarDetalhes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnGerarGabarito" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnGerarGabarito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnCalcular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnCalcular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnConcluirItens" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnConcluirItens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnDuplicarTeste" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnDuplicarTeste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnGerarPdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnGerarPdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAdicionarItens" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnAdicionarItens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAdicionar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnAdicionar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAdicionarItens1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnAdicionarItens1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAdicionarPedido1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnAdicionarPedido1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAtualizarPedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnAtualizarPedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnCalcular1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnCalcular1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnGerarPdf1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGerarPdf1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnConcluirItens1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnConcluirItens1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnConcluirPedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnConcluirPedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnReverterAcao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnReverterAcao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnDuplicarTeste1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnDuplicarTeste1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnGerarPdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGerarPdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnEditar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnEditar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnAdicionarPedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdicionarPedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnVisualizarDetalhes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnVisualizarDetalhes1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnExcluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnExcluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAtualizarPedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAtualizarPedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdicionarItens" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdicionarItens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnExcluir1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnExcluir1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnFiltrar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnFiltrar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnVisualizarAlugueis1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnVisualizarAlugueis1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnConcluirItens" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnConcluirItens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnVisualizarDetalhes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnVisualizarDetalhes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdicionarPedido1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdicionarPedido1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdicionarItens1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdicionarItens1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnConcluirPedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnConcluirPedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnCalcular1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCalcular1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdicionar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdicionar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnEditar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDuplicarTeste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDuplicarTeste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnGerarGabarito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGerarGabarito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnVisualizarAlugueis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnVisualizarAlugueis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdicionar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnGerarGabarito1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnGerarGabarito1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnGerarPdf1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnGerarPdf1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnReverterAcao1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnReverterAcao1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnVisualizarAlugueis1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnVisualizarAlugueis1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnDuplicarTeste1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDuplicarTeste1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnVisualizarDetalhes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnVisualizarDetalhes1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnCalcular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCalcular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnFiltrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnFiltrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnFiltrar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnFiltrar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnRemoverPedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnRemoverPedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -87,9 +87,11 @@
             // 
             txtPrecoProduto.DecimalPlaces = 2;
             txtPrecoProduto.Location = new Point(160, 99);
+            txtPrecoProduto.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             txtPrecoProduto.Name = "txtPrecoProduto";
             txtPrecoProduto.Size = new Size(120, 23);
             txtPrecoProduto.TabIndex = 2;
+            txtPrecoProduto.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // btnGravar
             // 

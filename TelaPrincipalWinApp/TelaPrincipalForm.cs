@@ -8,12 +8,11 @@ using ControleDeBar.Infra.Memoria.ModuloGarcom;
 using ControleDeBar.WinApp.ModuloConta;
 using ControleDeBar.Dominio.ModuloConta;
 using ControleDeBar.Infra.Memoria.ModuloConta;
-#endregion
 
-using ControleDeBar.WinApp.Compartilhado;
 using ControleDeBar.Dominio.ModuloProduto;
 using ControleDeBar.Infra.Memoria.ModuloProduto;
 using ControleDeBar.WinApp.ModuloProduto;
+#endregion
 
 namespace TelaPrincipalWinApp
 {
@@ -68,6 +67,7 @@ namespace TelaPrincipalWinApp
         private void produtoMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorProduto(repositorioProduto);
+
             ConfigurarTelaPrincipal(controlador);
         }
 
@@ -80,7 +80,7 @@ namespace TelaPrincipalWinApp
 
         private void contaMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorConta(repositorioConta, repositorioGarcom);
+            controlador = new ControladorConta(repositorioConta, repositorioGarcom, repositorioProduto);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -109,6 +109,7 @@ namespace TelaPrincipalWinApp
             btnAdicionar.ToolTipText = controladorSelecionado.ToolTipAdicionar;
             btnEditar.ToolTipText = controladorSelecionado.ToolTipEditar;
             btnExcluir.ToolTipText = controladorSelecionado.ToolTipExcluir;
+
         }
 
         private void ConfigurarToolBox(ControladorBase controladorSelecionado)

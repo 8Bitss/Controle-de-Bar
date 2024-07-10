@@ -32,5 +32,10 @@ namespace ControleDeBar.Dominio.ModuloConta
 
             return erros;
         }
+
+        public override string ToString()
+        {
+            return $"{QtdProduto}x {Produto.Nome}";
+        }
     }
 }

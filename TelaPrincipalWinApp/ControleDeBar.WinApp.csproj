@@ -9,13 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ModuloConta\**" />
     <Compile Remove="ModuloMesa\**" />
     <Compile Remove="ModuloPedido\**" />
-    <EmbeddedResource Remove="ModuloConta\**" />
     <EmbeddedResource Remove="ModuloMesa\**" />
     <EmbeddedResource Remove="ModuloPedido\**" />
-    <None Remove="ModuloConta\**" />
     <None Remove="ModuloMesa\**" />
     <None Remove="ModuloPedido\**" />
   </ItemGroup>

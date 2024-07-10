@@ -6,34 +6,35 @@ using TelaPrincipalWinApp;
 
 namespace ControleDeBar.WinApp.ModuloConta
 {
-    public class ControladorConta : ControladorBase, IControladorPedido
+    public class ControladorConta : ControladorBase
     {
         private IRepositorioConta repositorioConta;
         private IRepositorioGarcom repositorioGarcom;
+        private IRepositorioProduto repositorioProduto;
 
         private TabelaContaControl tabelaConta;
 
-        public ControladorConta(IRepositorioConta repositorio, IRepositorioGarcom repositorioGarcom)
+        public ControladorConta(IRepositorioConta repositorio, IRepositorioGarcom repositorioGarcom, IRepositorioProduto repositorioProduto)
         {
             repositorioConta = repositorio;
             this.repositorioGarcom = repositorioGarcom;
+            this.repositorioProduto = repositorioProduto;
         }
 
         public override string TipoCadastro { get { return "Contas"; } }
         public override string ToolTipAdicionar { get { return "Cadastrar uma novo conta"; } }
-        public override string ToolTipEditar { get { return "Editar uma conta existente"; } }
+        public override string ToolTipEditar { get { return "Atualizar um pedido existente"; } }
         public override string ToolTipExcluir { get { return "Excluir uma conta existente"; } }
 
-        public string ToolTipAdicionarPedido { get { return "Adicionar pedido"; } }
-        public string ToolTipConcluirPedido { get { return "Concluir pedido"; } }
 
         public override void Adicionar()
         {
-            TelaContaForm telaConta = new TelaContaForm();
-
             List<Garcom> garconsCadastrados = repositorioGarcom.SelecionarTodos();
+            List<Produto> produtosCadastrados = repositorioProduto.SelecionarTodos();
 
-            telaConta.CarregarGarcons(garconsCadastrados);
+            TelaContaForm telaConta = new TelaContaForm(garconsCadastrados, produtosCadastrados);
+
+            telaConta.CarregarProdutos(produtosCadastrados);
 
             DialogResult resultado = telaConta.ShowDialog();
 
@@ -53,8 +54,10 @@ namespace ControleDeBar.WinApp.ModuloConta
 
         public override void Editar()
         {
+            List<Garcom> garconsCadastrados = repositorioGarcom.SelecionarTodos();
+            List<Produto> produtosCadastrados = repositorioProduto.SelecionarTodos();
 
-            TelaContaForm telaConta = new TelaContaForm();
+            TelaContaForm telaConta = new TelaContaForm(garconsCadastrados, produtosCadastrados);
 
             int idSelecionado = tabelaConta.ObterRegistroSelecionado();
 
@@ -136,21 +139,6 @@ namespace ControleDeBar.WinApp.ModuloConta
             CarregarContas();
 
             return tabelaConta;
-        }
-
-        public void AdicionarPedido()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AtualizarPedido()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ConcluirPedido()
-        {
-            throw new NotImplementedException();
         }
 
         private void CarregarContas()

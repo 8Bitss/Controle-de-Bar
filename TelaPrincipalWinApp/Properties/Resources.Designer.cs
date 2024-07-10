@@ -303,6 +303,16 @@ namespace ControleDeBar.WinApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnRemoverPedido {
+            get {
+                object obj = ResourceManager.GetObject("btnRemoverPedido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnReverterAcao {
             get {
                 object obj = ResourceManager.GetObject("btnReverterAcao", resourceCulture);
