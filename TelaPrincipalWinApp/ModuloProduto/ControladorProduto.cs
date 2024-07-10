@@ -19,7 +19,7 @@ namespace ControleDeBar.WinApp.ModuloProduto
 
         public override string ToolTipAdicionar { get { return "Cadastrar um novo produto"; } }
 
-        public override string ToolTipEditar { get { return "Editar um novo produto"; } }
+        public override string ToolTipEditar { get { return "Editar uma produto existente"; } }
 
         public override string ToolTipExcluir { get { return "Excluir um produto existente"; } }
 

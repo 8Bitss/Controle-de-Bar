@@ -8,6 +8,9 @@ using ControleDeBar.WinApp.Compartilhado;
 using ControleDeBar.Dominio.ModuloProduto;
 using ControleDeBar.Infra.Memoria.ModuloProduto;
 using ControleDeBar.WinApp.ModuloProduto;
+using ControleDeBar.Dominio.ModuloMesa;
+using ControleDeBar.Infra.Memoria.ModuloMesa;
+using ControleDeBar.WinApp.ModuloMesa;
 
 namespace TelaPrincipalWinApp
 {
@@ -18,6 +21,7 @@ namespace TelaPrincipalWinApp
         #region Repositórios
         IRepositorioGarcom repositorioGarcom;
         IRepositorioProduto repositorioProduto;
+        IRepositorioMesa repositorioMesa;
         #endregion
 
         public static TelaPrincipalForm Instancia { get; private set; }
@@ -31,6 +35,7 @@ namespace TelaPrincipalWinApp
             #region Instancias de Repositorio
             repositorioGarcom = new RepositorioGarcomEmMemoria();
             repositorioProduto = new RepositorioProdutoEmMemoria();
+            repositorioMesa = new RepositorioMesaEmMemoria();
             #endregion
         }
 
@@ -73,6 +78,12 @@ namespace TelaPrincipalWinApp
 
             ConfigurarTelaPrincipal(controlador);
         }
+
+        private void mesaMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorMesa(repositorioMesa);
+            ConfigurarTelaPrincipal(controlador);
+        }
         #endregion
 
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
@@ -105,5 +116,6 @@ namespace TelaPrincipalWinApp
             btnEditar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
         }
+
     }
 }

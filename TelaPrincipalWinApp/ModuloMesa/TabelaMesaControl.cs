@@ -1,11 +1,11 @@
-﻿using ControleDeBar.Dominio.ModuloProduto;
+﻿using ControleDeBar.Dominio.ModuloMesa;
 using ControleDeBar.WinApp.Compartilhado;
 
-namespace ControleDeBar.WinApp.ModuloProduto
+namespace ControleDeBar.WinApp.ModuloMesa
 {
-    public partial class TabelaProdutoControl : UserControl
+    public partial class TabelaMesaControl : UserControl
     {
-        public TabelaProdutoControl()
+        public TabelaMesaControl()
         {
             InitializeComponent();
 
@@ -15,12 +15,12 @@ namespace ControleDeBar.WinApp.ModuloProduto
             grid.ConfigurarGridZebrado();
         }
 
-        public void AtualizarRegistros(List<Produto> produtos)
+        public void AtualizarRegistros(List<Mesa> mesas)
         {
             grid.Rows.Clear();
 
-            foreach (Produto produto in produtos)
-                grid.Rows.Add(produto.Id, produto.Nome, produto.Preco);
+            foreach (Mesa mesa in mesas)
+                grid.Rows.Add(mesa.Id, mesa.Numero, mesa.MesaOcupada);
         }
 
         public int ObterRegistroSelecionado()
@@ -33,8 +33,8 @@ namespace ControleDeBar.WinApp.ModuloProduto
             return new DataGridViewColumn[]
             {
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id" },
-                new DataGridViewTextBoxColumn { DataPropertyName = "Nome", HeaderText = "Nome" },
-                new DataGridViewTextBoxColumn { DataPropertyName = "Preco", HeaderText = "Preço" }
+                new DataGridViewTextBoxColumn { DataPropertyName = "Numero", HeaderText = "Numero" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Mesa Ocupada", HeaderText = "Mesa Ocupada" }, 
             };
         }
     }
