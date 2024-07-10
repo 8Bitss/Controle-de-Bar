@@ -6,7 +6,7 @@ using TelaPrincipalWinApp;
 
 namespace ControleDeBar.WinApp.ModuloConta
 {
-    public class ControladorConta : ControladorBase
+    public class ControladorConta : ControladorBase, IControladorAdicionaisConta
     {
         private IRepositorioConta repositorioConta;
         private IRepositorioGarcom repositorioGarcom;
@@ -26,6 +26,7 @@ namespace ControleDeBar.WinApp.ModuloConta
         public override string ToolTipEditar { get { return "Atualizar um pedido existente"; } }
         public override string ToolTipExcluir { get { return "Excluir uma conta existente"; } }
 
+        public string ToolTipGerarRelatorios { get { return "Gerar relatórios da conta"; } }
 
         public override void Adicionar()
         {
@@ -129,6 +130,11 @@ namespace ControleDeBar.WinApp.ModuloConta
             TelaPrincipalForm
                 .Instancia
                 .AtualizarRodape($"O registro \"{contaSelecionado.Id}\" foi excluído com sucesso!");
+        }
+
+        public void GerarRelatorios()
+        {
+            throw new NotImplementedException();
         }
 
         public override UserControl ObterListagem()

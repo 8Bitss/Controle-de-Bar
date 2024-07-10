@@ -84,6 +84,12 @@ namespace TelaPrincipalWinApp
 
             ConfigurarTelaPrincipal(controlador);
         }
+
+        private void gerarRelatoriosStripButton_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorAdicionaisConta controladorAdicionais)
+                controladorAdicionais.GerarRelatorios();
+        }
         #endregion
 
         #region Configurações Gerais
@@ -110,6 +116,8 @@ namespace TelaPrincipalWinApp
             btnEditar.ToolTipText = controladorSelecionado.ToolTipEditar;
             btnExcluir.ToolTipText = controladorSelecionado.ToolTipExcluir;
 
+            if(controlador is IControladorAdicionaisConta controladorAdicionais)
+                btnGerarRelatorios.ToolTipText = controladorAdicionais.ToolTipGerarRelatorios;
         }
 
         private void ConfigurarToolBox(ControladorBase controladorSelecionado)
@@ -117,6 +125,8 @@ namespace TelaPrincipalWinApp
             btnAdicionar.Enabled = controladorSelecionado is ControladorBase;
             btnEditar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
+
+            btnGerarRelatorios.Enabled = controladorSelecionado is IControladorAdicionaisConta;  
 
             ConfigurarToolTips(controladorSelecionado);
         }

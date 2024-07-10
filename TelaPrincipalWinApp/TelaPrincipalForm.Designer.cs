@@ -42,6 +42,7 @@
             toolStripSeparator1 = new ToolStripSeparator();
             lblTipoCadastro = new ToolStripLabel();
             toolStrip1 = new ToolStrip();
+            btnGerarRelatorios = new ToolStripButton();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -171,13 +172,25 @@
             toolStrip1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip1.ImageScalingSize = new Size(24, 24);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, lblTipoCadastro });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnGerarRelatorios, lblTipoCadastro });
             toolStrip1.Location = new Point(0, 35);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.RenderMode = ToolStripRenderMode.Professional;
             toolStrip1.Size = new Size(780, 31);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
+            // 
+            // btnGerarRelatorios
+            // 
+            btnGerarRelatorios.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnGerarRelatorios.Enabled = false;
+            btnGerarRelatorios.Font = new Font("Segoe UI", 12F);
+            btnGerarRelatorios.Image = ControleDeBar.WinApp.Properties.Resources.btnGerarGabarito;
+            btnGerarRelatorios.ImageTransparentColor = Color.Magenta;
+            btnGerarRelatorios.Name = "btnGerarRelatorios";
+            btnGerarRelatorios.Padding = new Padding(0, 0, 10, 0);
+            btnGerarRelatorios.Size = new Size(38, 28);
+            btnGerarRelatorios.Click += gerarRelatoriosStripButton_Click;
             // 
             // TelaPrincipalForm
             // 
@@ -220,5 +233,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel lblTipoCadastro;
         private ToolStrip toolStrip1;
+        private ToolStripButton btnGerarRelatorios;
     }
 }
