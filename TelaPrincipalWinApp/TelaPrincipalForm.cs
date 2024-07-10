@@ -1,22 +1,22 @@
 #region Import dos Modulos
 using ControleDeBar.Dominio.ModuloGarcom;
-using ControleDeBar.Infra.Memoria.ModuloGarcom;
 using ControleDeBar.WinApp.ModuloGarcom;
-#endregion
-
 using ControleDeBar.WinApp.Compartilhado;
 using ControleDeBar.Dominio.ModuloProduto;
-using ControleDeBar.Infra.Memoria.ModuloProduto;
 using ControleDeBar.WinApp.ModuloProduto;
 using ControleDeBar.Dominio.ModuloMesa;
-using ControleDeBar.Infra.Memoria.ModuloMesa;
 using ControleDeBar.WinApp.ModuloMesa;
+using ControledeBar.Infra.Orm.Compartilhado;
+using ControledeBar.Infra.Orm.ModuloMesa;
+#endregion
+
 
 namespace TelaPrincipalWinApp
 {
     public partial class TelaPrincipalForm : Form
     {
         ControladorBase controlador;
+        ControleDeBarDbContext dbContext;
 
         #region Repositórios
         IRepositorioGarcom repositorioGarcom;
@@ -32,10 +32,13 @@ namespace TelaPrincipalWinApp
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
 
+            dbContext = new ControleDeBarDbContext();
+
             #region Instancias de Repositorio
-            repositorioGarcom = new RepositorioGarcomEmMemoria();
-            repositorioProduto = new RepositorioProdutoEmMemoria();
-            repositorioMesa = new RepositorioMesaEmMemoria();
+            repositorioMesa = new RepositorioMesaEmOrm(dbContext);
+            //repositorioGarcom = new RepositorioGarcomEmMemoria();
+            //repositorioProduto = new RepositorioProdutoEmMemoria();
+            //repositorioMesa = new RepositorioMesaEmMemoria();
             #endregion
         }
 
@@ -116,6 +119,5 @@ namespace TelaPrincipalWinApp
             btnEditar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
         }
-
     }
 }

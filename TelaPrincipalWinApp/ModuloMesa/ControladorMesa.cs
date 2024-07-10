@@ -49,10 +49,10 @@ namespace ControleDeBar.WinApp.ModuloMesa
 
             int idSelecionado = tabelaMesa.ObterRegistroSelecionado();
 
-            Mesa mesaSelecionado =
+            Mesa mesaSelecionada =
                 repositorioMesa.SelecionarPorId(idSelecionado);
 
-            if (mesaSelecionado == null)
+            if (mesaSelecionada == null)
             {
                 MessageBox.Show(
                     "Não é possível realizar esta ação sem um registro selecionado.",
@@ -63,7 +63,7 @@ namespace ControleDeBar.WinApp.ModuloMesa
                 return;
             }
 
-            telaMesa.Mesa = mesaSelecionado;
+            telaMesa.Mesa = mesaSelecionada;
 
             DialogResult resultado = telaMesa.ShowDialog();
 
@@ -72,7 +72,7 @@ namespace ControleDeBar.WinApp.ModuloMesa
 
             Mesa mesaEditada = telaMesa.Mesa;
 
-            repositorioMesa.Editar(mesaSelecionado.Id, mesaEditada);
+            repositorioMesa.Editar(mesaSelecionada, mesaEditada);
 
             CarregarMesas();
 
@@ -109,7 +109,7 @@ namespace ControleDeBar.WinApp.ModuloMesa
             if (resposta != DialogResult.Yes)
                 return;
 
-            repositorioMesa.Excluir(mesaSelecionada.Id);
+            repositorioMesa.Excluir(mesaSelecionada);
 
             CarregarMesas();
 
