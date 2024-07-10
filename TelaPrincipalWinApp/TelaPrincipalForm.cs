@@ -8,6 +8,7 @@ using ControleDeBar.Dominio.ModuloMesa;
 using ControleDeBar.WinApp.ModuloMesa;
 using ControledeBar.Infra.Orm.Compartilhado;
 using ControledeBar.Infra.Orm.ModuloMesa;
+using ControledeBar.Infra.Orm.ModuloProduto;
 #endregion
 
 
@@ -36,6 +37,8 @@ namespace TelaPrincipalWinApp
 
             #region Instancias de Repositorio
             repositorioMesa = new RepositorioMesaEmOrm(dbContext);
+            repositorioProduto = new RepositorioProdutoEmOrm(dbContext);
+            
             //repositorioGarcom = new RepositorioGarcomEmMemoria();
             //repositorioProduto = new RepositorioProdutoEmMemoria();
             //repositorioMesa = new RepositorioMesaEmMemoria();

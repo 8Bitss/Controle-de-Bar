@@ -72,7 +72,7 @@ namespace ControleDeBar.WinApp.ModuloProduto
 
             Produto produtoEditado = telaProduto.Produto;
 
-            repositorioProduto.Editar(produtoSelecionado.Id, produtoEditado);
+            repositorioProduto.Editar(produtoSelecionado, produtoEditado);
 
             CarregarProdutos();
 
@@ -109,7 +109,7 @@ namespace ControleDeBar.WinApp.ModuloProduto
             if (resposta != DialogResult.Yes)
                 return;
 
-            repositorioProduto.Excluir(produtoSelecionado.Id);
+            repositorioProduto.Excluir(produtoSelecionado);
 
             CarregarProdutos();
 

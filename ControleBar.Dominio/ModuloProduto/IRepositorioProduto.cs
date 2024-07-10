@@ -2,9 +2,9 @@
 {
     public interface IRepositorioProduto
     {
-        void Cadastrar(Produto novoProduto);
-        bool Editar(int id, Produto produtoEditado);
-        bool Excluir(int id);
+        void Cadastrar(Produto registro);
+        bool Editar(Produto registroOriginal, Produto registroAtualizado);
+        bool Excluir(Produto registro);
         Produto SelecionarPorId(int idSelecionado);
         List<Produto> SelecionarTodos();
     }

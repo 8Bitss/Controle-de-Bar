@@ -1,4 +1,5 @@
 ﻿using ControleDeBar.Dominio.ModuloMesa;
+using ControleDeBar.Dominio.ModuloProduto;
 using Microsoft.EntityFrameworkCore;
 
 namespace ControledeBar.Infra.Orm.Compartilhado
@@ -6,6 +7,7 @@ namespace ControledeBar.Infra.Orm.Compartilhado
     public class ControleDeBarDbContext : DbContext
     {
         public DbSet<Mesa> Mesas { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,6 +21,7 @@ namespace ControledeBar.Infra.Orm.Compartilhado
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             modelBuilder.Entity<Mesa>(mesaBuilder =>
             {
                 mesaBuilder.ToTable("TBMesa");
@@ -34,6 +37,23 @@ namespace ControledeBar.Infra.Orm.Compartilhado
                 mesaBuilder.Property(d => d.MesaOcupada)
                     .IsRequired()
                     .HasColumnType("bit");
+            });
+            
+            modelBuilder.Entity<Produto>(produtoBuilder =>
+            {
+                produtoBuilder.ToTable("TBProduto");
+
+                produtoBuilder.Property(d => d.Id)
+                    .IsRequired()
+                    .ValueGeneratedOnAdd();
+
+                produtoBuilder.Property(d => d.Nome)
+                    .IsRequired()
+                    .HasColumnType("varchar(200)");
+
+                produtoBuilder.Property(d => d.Preco)
+                    .IsRequired()
+                    .HasColumnType("decimal");
             });
 
             base.OnModelCreating(modelBuilder);

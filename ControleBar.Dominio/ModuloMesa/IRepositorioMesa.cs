@@ -1,6 +1,4 @@
-﻿using ControleDeBar.Dominio.ModuloProduto;
-
-namespace ControleDeBar.Dominio.ModuloMesa
+﻿namespace ControleDeBar.Dominio.ModuloMesa
 {
     public interface IRepositorioMesa 
     {
