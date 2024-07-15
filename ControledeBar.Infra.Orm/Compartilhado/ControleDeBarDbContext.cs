@@ -12,7 +12,7 @@ namespace ControledeBar.Infra.Orm.Compartilhado
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string connectionString =
-               "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=ControleDeBarOrm;Integrated Security=True";
+               "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=ControleDeBarOrm;Integrated Security=True;Trust Server Certificate=True";
 
             optionsBuilder.UseSqlServer(connectionString);
 

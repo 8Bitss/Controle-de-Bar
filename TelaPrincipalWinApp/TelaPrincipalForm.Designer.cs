@@ -52,7 +52,7 @@
             // 
             menuStrip1.BackColor = SystemColors.ControlLight;
             menuStrip1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { produtoMenuItem, mesaToolStripMenuItem, garcomMenuItem, contaMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { produtoMenuItem, mesaMenuItem, garcomMenuItem, contaMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5);
