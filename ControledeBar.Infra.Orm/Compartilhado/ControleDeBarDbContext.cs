@@ -1,13 +1,18 @@
-﻿using ControleDeBar.Dominio.ModuloMesa;
+﻿using ControleDeBar.Dominio.ModuloGarcom;
+using ControleDeBar.Dominio.ModuloMesa;
 using ControleDeBar.Dominio.ModuloProduto;
 using Microsoft.EntityFrameworkCore;
 
-namespace ControledeBar.Infra.Orm.Compartilhado
+namespace ControleDeBar.Infra.Orm.Compartilhado
 {
     public class ControleDeBarDbContext : DbContext
     {
         public DbSet<Mesa> Mesas { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        
+        public DbSet<Garcom> Garcons { get; set; }
+
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -54,6 +59,23 @@ namespace ControledeBar.Infra.Orm.Compartilhado
                 produtoBuilder.Property(d => d.Preco)
                     .IsRequired()
                     .HasColumnType("decimal");
+            });
+
+            modelBuilder.Entity<Garcom>(garcomBuiler =>
+            {
+                garcomBuiler.ToTable("TBGarcom");
+
+                garcomBuiler.Property(g => g.Id)
+                .IsRequired()
+                .ValueGeneratedOnAdd();
+
+                garcomBuiler.Property(g => g.Nome)
+                .IsRequired()
+                .HasColumnType("varchar(200)");
+
+                garcomBuiler.Property(g => g.Cpf)
+                .IsRequired()
+                .HasColumnType("varchar(20)");
             });
 
             base.OnModelCreating(modelBuilder);

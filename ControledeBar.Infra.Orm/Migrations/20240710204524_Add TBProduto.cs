@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ControledeBar.Infra.Orm.Migrations
+namespace ControleDeBar.Infra.Orm.Migrations
 {
     /// <inheritdoc />
     public partial class AddTBProduto : Migration

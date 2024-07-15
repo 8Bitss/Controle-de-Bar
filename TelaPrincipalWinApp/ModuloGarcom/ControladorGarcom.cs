@@ -69,7 +69,7 @@ namespace ControleDeBar.WinApp.ModuloGarcom
 
             Garcom garcomEditado = telaGarcom.Garcom;
 
-            repositorioGarcom.Editar(garcomSelecionado.Id, garcomEditado);
+            repositorioGarcom.Editar(garcomSelecionado, garcomEditado);
 
             CarregarGarcons();
 
@@ -106,7 +106,7 @@ namespace ControleDeBar.WinApp.ModuloGarcom
             if (resposta != DialogResult.Yes)
                 return;
 
-            repositorioGarcom.Excluir(garcomSelecionado.Id);
+            repositorioGarcom.Excluir(garcomSelecionado);
 
             CarregarGarcons();
 

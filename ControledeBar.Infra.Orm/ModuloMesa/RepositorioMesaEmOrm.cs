@@ -1,7 +1,7 @@
-﻿using ControledeBar.Infra.Orm.Compartilhado;
+﻿using ControleDeBar.Infra.Orm.Compartilhado;
 using ControleDeBar.Dominio.ModuloMesa;
 
-namespace ControledeBar.Infra.Orm.ModuloMesa
+namespace ControleDeBar.Infra.Orm.ModuloMesa
 {
     public class RepositorioMesaEmOrm : IRepositorioMesa
     {

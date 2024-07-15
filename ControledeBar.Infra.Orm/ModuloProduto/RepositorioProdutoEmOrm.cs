@@ -1,8 +1,8 @@
-﻿using ControledeBar.Infra.Orm.Compartilhado;
+﻿using ControleDeBar.Infra.Orm.Compartilhado;
 using ControleDeBar.Dominio.ModuloProduto;
 using Microsoft.EntityFrameworkCore;
 
-namespace ControledeBar.Infra.Orm.ModuloProduto
+namespace ControleDeBar.Infra.Orm.ModuloProduto
 {
     public class RepositorioProdutoEmOrm : IRepositorioProduto
     {
