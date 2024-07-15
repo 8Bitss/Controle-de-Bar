@@ -19,7 +19,7 @@ namespace ControleDeBar.WinApp.ModuloProduto
 
         public override string ToolTipAdicionar { get { return "Cadastrar um novo produto"; } }
 
-        public override string ToolTipEditar { get { return "Editar um novo produto"; } }
+        public override string ToolTipEditar { get { return "Editar uma produto existente"; } }
 
         public override string ToolTipExcluir { get { return "Excluir um produto existente"; } }
 
@@ -72,7 +72,7 @@ namespace ControleDeBar.WinApp.ModuloProduto
 
             Produto produtoEditado = telaProduto.Produto;
 
-            repositorioProduto.Editar(produtoSelecionado.Id, produtoEditado);
+            repositorioProduto.Editar(produtoSelecionado, produtoEditado);
 
             CarregarProdutos();
 
@@ -109,7 +109,7 @@ namespace ControleDeBar.WinApp.ModuloProduto
             if (resposta != DialogResult.Yes)
                 return;
 
-            repositorioProduto.Excluir(produtoSelecionado.Id);
+            repositorioProduto.Excluir(produtoSelecionado);
 
             CarregarProdutos();
 

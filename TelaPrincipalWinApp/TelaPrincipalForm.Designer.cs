@@ -30,7 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             produtoMenuItem = new ToolStripMenuItem();
-            mesaToolStripMenuItem = new ToolStripMenuItem();
+            mesaMenuItem = new ToolStripMenuItem();
             garcomMenuItem = new ToolStripMenuItem();
             contaMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
@@ -68,12 +68,12 @@
             produtoMenuItem.Text = "Produto";
             produtoMenuItem.Click += produtoMenuItem_Click;
             // 
-            // mesaToolStripMenuItem
+            // mesaMenuItem
             // 
-            mesaToolStripMenuItem.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mesaToolStripMenuItem.Name = "mesaToolStripMenuItem";
-            mesaToolStripMenuItem.Size = new Size(61, 25);
-            mesaToolStripMenuItem.Text = "Mesa";
+            mesaMenuItem.Name = "mesaMenuItem";
+            mesaMenuItem.Size = new Size(47, 20);
+            mesaMenuItem.Text = "Mesa";
+            mesaMenuItem.Click += mesaMenuItem_Click;
             // 
             // garcomMenuItem
             // 
@@ -221,7 +221,7 @@
         #endregion
         private MenuStrip menuStrip1;
         private ToolStripMenuItem produtoMenuItem;
-        private ToolStripMenuItem mesaToolStripMenuItem;
+        private ToolStripMenuItem mesaMenuItem;
         private ToolStripMenuItem garcomMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripMenuItem contaMenuItem;

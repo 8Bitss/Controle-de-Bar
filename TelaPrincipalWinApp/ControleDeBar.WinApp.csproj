@@ -9,17 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ModuloMesa\**" />
     <Compile Remove="ModuloPedido\**" />
-    <EmbeddedResource Remove="ModuloMesa\**" />
     <EmbeddedResource Remove="ModuloPedido\**" />
-    <None Remove="ModuloMesa\**" />
     <None Remove="ModuloPedido\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ControleBar.Dominio\ControleDeBar.Dominio.csproj" />
     <ProjectReference Include="..\ControleDeBar.Infra.Memoria\ControleDeBar.Infra.Memoria.csproj" />
+    <ProjectReference Include="..\ControledeBar.Infra.Orm\ControledeBar.Infra.Orm.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +39,13 @@
     <Folder Include="ModuloGarcom\" />
     <Folder Include="ModuloMesa\" />
     <Folder Include="ModuloPedido\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

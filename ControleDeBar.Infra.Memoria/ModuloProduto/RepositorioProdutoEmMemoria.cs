@@ -1,4 +1,4 @@
-﻿using ControleDeBar.Dominio.ModuloProduto;
+﻿/*using ControleDeBar.Dominio.ModuloProduto;
 using ControleDeBar.Infra.Memoria.Compartilhado;
 
 namespace ControleDeBar.Infra.Memoria.ModuloProduto
@@ -8,3 +8,4 @@ namespace ControleDeBar.Infra.Memoria.ModuloProduto
 
     }
 }
+*/

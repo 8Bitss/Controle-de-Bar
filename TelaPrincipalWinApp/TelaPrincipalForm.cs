@@ -9,20 +9,27 @@ using ControleDeBar.WinApp.ModuloConta;
 using ControleDeBar.Dominio.ModuloConta;
 using ControleDeBar.Infra.Memoria.ModuloConta;
 
-using ControleDeBar.Dominio.ModuloProduto;
-using ControleDeBar.Infra.Memoria.ModuloProduto;
 using ControleDeBar.WinApp.ModuloProduto;
+using ControleDeBar.Dominio.ModuloProduto;
+using ControleDeBar.Dominio.ModuloMesa;
+using ControleDeBar.WinApp.ModuloMesa;
+using ControledeBar.Infra.Orm.Compartilhado;
+using ControledeBar.Infra.Orm.ModuloMesa;
+using ControledeBar.Infra.Orm.ModuloProduto;
 #endregion
+
 
 namespace TelaPrincipalWinApp
 {
     public partial class TelaPrincipalForm : Form
     {
         ControladorBase controlador;
+        ControleDeBarDbContext dbContext;
 
         #region Repositórios
         IRepositorioGarcom repositorioGarcom;
         IRepositorioProduto repositorioProduto;
+        IRepositorioMesa repositorioMesa;
         IRepositorioConta repositorioConta;
         #endregion
 
@@ -34,10 +41,15 @@ namespace TelaPrincipalWinApp
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
 
+            dbContext = new ControleDeBarDbContext();
+
             #region Instancias de Repositorio
+            repositorioMesa = new RepositorioMesaEmOrm(dbContext);
+            repositorioProduto = new RepositorioProdutoEmOrm(dbContext);
+            
+            //repositorioGarcom = new RepositorioGarcomEmMemoria();
             repositorioGarcom = new RepositorioGarcomEmMemoria();
             repositorioConta = new RepositorioContaEmMemoria();
-            repositorioProduto = new RepositorioProdutoEmMemoria();
             #endregion
         }
 
@@ -75,6 +87,12 @@ namespace TelaPrincipalWinApp
         {
             controlador = new ControladorGarcom(repositorioGarcom);
 
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void mesaMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorMesa(repositorioMesa);
             ConfigurarTelaPrincipal(controlador);
         }
 

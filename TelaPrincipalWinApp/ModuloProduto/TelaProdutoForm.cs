@@ -1,5 +1,4 @@
-﻿using ControleDeBar.Dominio.ModuloGarcom;
-using ControleDeBar.Dominio.ModuloProduto;
+﻿using ControleDeBar.Dominio.ModuloProduto;
 using TelaPrincipalWinApp;
 
 namespace ControleDeBar.WinApp.ModuloProduto
@@ -30,7 +29,7 @@ namespace ControleDeBar.WinApp.ModuloProduto
         private void btnGravar_Click(object sender, EventArgs e)
         {
             string nome = txtNomeProduto.Text;
-            decimal preco = (decimal)txtPrecoProduto.Value;
+            decimal preco = txtPrecoProduto.Value;
 
             produto = new Produto(nome, preco);
 
