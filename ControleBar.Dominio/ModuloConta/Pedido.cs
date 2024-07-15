@@ -8,6 +8,11 @@ namespace ControleDeBar.Dominio.ModuloConta
         public Produto Produto { get; set; }
         public int QtdProduto { get; set; }
 
+        public Pedido()
+        {
+            
+        }
+
         public Pedido(Produto produto, int qtdProduto)
         {
             Produto = produto;

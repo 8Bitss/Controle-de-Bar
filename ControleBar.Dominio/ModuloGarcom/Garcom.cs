@@ -8,6 +8,11 @@ namespace ControleDeBar.Dominio.ModuloGarcom
         public string Nome { get; set; }
         public string Cpf { get; set; }
 
+        public Garcom()
+        {
+            
+        }
+
         public Garcom(string nome, string cpf)
         {
             Nome = nome;
