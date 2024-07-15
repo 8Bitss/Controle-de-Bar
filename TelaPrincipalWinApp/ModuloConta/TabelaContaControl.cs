@@ -20,7 +20,7 @@ namespace ControleDeBar.WinApp.ModuloConta
             grid.Rows.Clear();
 
             foreach (Conta c in contas)
-                grid.Rows.Add(c.Id, c.Titular, c.Garcom.Nome);
+                grid.Rows.Add(c.Id, c.Titular, c.Mesa.Numero, c.Garcom.Nome);
         }
 
         public int ObterRegistroSelecionado()
@@ -34,6 +34,7 @@ namespace ControleDeBar.WinApp.ModuloConta
             {
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Titular", HeaderText = "Nome do Titular" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Mesa", HeaderText = "Número da Mesa" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Garcom", HeaderText = "Nome do Garçom" }
             };
         }

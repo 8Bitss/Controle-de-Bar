@@ -15,9 +15,15 @@ namespace ControleDeBar.Dominio.ModuloConta
 
         public decimal ValorTotal { get; set; }
 
-        public Conta(string nomeCliente, Garcom garcom)
+        public Conta()
         {
-            Titular = nomeCliente;
+            
+        }
+
+        public Conta(string titular, Mesa mesa, Garcom garcom) : this()
+        {
+            Titular = titular;
+            Mesa = mesa;
             Garcom = garcom;
             EstaAberta = true;
             Abertura = DateTime.Now;
@@ -45,7 +51,10 @@ namespace ControleDeBar.Dominio.ModuloConta
                 erros.Add("O campo \"nome\" é obrigatório");
 
             if(Garcom == null)
-                erros.Add("O campo \"Garçom\" é obrigatório");
+                erros.Add("O campo \"garçom\" é obrigatório");
+
+            if(Mesa == null)
+                erros.Add("O campo \"mesa\" é obrigatório");
 
             return erros;
         }

@@ -13,8 +13,7 @@ namespace ControleDeBar.Infra.Orm.Compartilhado
         
         public DbSet<Garcom> Garcons { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
-
-        
+        public DbSet<Conta> Contas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -99,7 +98,45 @@ namespace ControleDeBar.Infra.Orm.Compartilhado
                 .HasColumnType("int");
             });
 
+            modelBuilder.Entity<Conta>(contaBuilder =>
+            {
+                contaBuilder.ToTable("TBConta");
 
+                contaBuilder.Property(c => c.Id)
+                .IsRequired()
+                .ValueGeneratedOnAdd();
+
+                contaBuilder.Property(c => c.Titular)
+                .IsRequired()
+                .HasColumnType("varchar(200)");
+
+                contaBuilder.HasOne(c => c.Mesa)
+                .WithMany()
+                .HasForeignKey("Mesa_Id")
+                .HasConstraintName("FK_TBConta_TBMesa")
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+                contaBuilder.HasOne(c => c.Garcom)
+                .WithMany()
+                .HasForeignKey("Garcom_Id")
+                .HasConstraintName("FK_TBConta_TBGarcom")
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+                contaBuilder.Property(c => c.Abertura)
+                .IsRequired()
+                .HasColumnType("datetime2");
+
+                contaBuilder.HasMany(c => c.Pedidos)
+                .WithOne()
+                .HasForeignKey("Conta_Id")
+                .HasConstraintName("FK_TBConta_TBProduto");
+
+                contaBuilder.Property(c => c.ValorTotal)
+                .IsRequired()
+                .HasColumnType("decimal");
+            });
 
             base.OnModelCreating(modelBuilder);
         }

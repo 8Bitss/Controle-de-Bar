@@ -18,6 +18,7 @@ namespace ControleDeBar.WinApp.ModuloConta
                 txtNome.Text = value.Titular;
 
                 cmbGarcom.SelectedItem = value.Garcom;
+                cmbMesa.SelectedItem = value.Mesa;
 
                 txtNome.Enabled = false;
                 cmbGarcom.Enabled = false;
@@ -36,9 +37,11 @@ namespace ControleDeBar.WinApp.ModuloConta
             }
         }
 
-        public TelaContaForm(List<Garcom> garcons, List<Produto> produtos)
+        public TelaContaForm(List<Mesa> mesas, List<Garcom> garcons, List<Produto> produtos)
         {
             InitializeComponent();
+
+            CarregarMesas(mesas);
 
             CarregarGarcons(garcons);
 
@@ -51,6 +54,14 @@ namespace ControleDeBar.WinApp.ModuloConta
 
             foreach (Garcom g in garcons)
                 cmbGarcom.Items.Add(g);
+        }
+
+        public void CarregarMesas(List<Mesa> mesas)
+        {
+            cmbMesa.Items.Clear();
+
+            foreach (Mesa m in mesas)
+                cmbMesa.Items.Add(m);
         }
 
         public void CarregarProdutos(List<Produto> produtos)
@@ -174,8 +185,9 @@ namespace ControleDeBar.WinApp.ModuloConta
         {
             string titular = txtNome.Text;
             Garcom garcom = (Garcom)cmbGarcom.SelectedItem;
+            Mesa mesa = (Mesa)cmbMesa.SelectedItem;
 
-            return new Conta(titular, garcom);
+            return new Conta(titular, mesa, garcom);
         }
     }
 }

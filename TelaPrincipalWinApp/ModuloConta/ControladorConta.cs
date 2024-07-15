@@ -1,5 +1,6 @@
 ﻿using ControleDeBar.Dominio.ModuloConta;
 using ControleDeBar.Dominio.ModuloGarcom;
+using ControleDeBar.Dominio.ModuloMesa;
 using ControleDeBar.Dominio.ModuloProduto;
 using ControleDeBar.WinApp.Compartilhado;
 using TelaPrincipalWinApp;
@@ -10,13 +11,15 @@ namespace ControleDeBar.WinApp.ModuloConta
     {
         private IRepositorioConta repositorioConta;
         private IRepositorioGarcom repositorioGarcom;
+        private IRepositorioMesa repositorioMesa;
         private IRepositorioProduto repositorioProduto;
 
         private TabelaContaControl tabelaConta;
 
-        public ControladorConta(IRepositorioConta repositorio, IRepositorioGarcom repositorioGarcom, IRepositorioProduto repositorioProduto)
+        public ControladorConta(IRepositorioConta repositorio, IRepositorioMesa repositorioMesa, IRepositorioGarcom repositorioGarcom, IRepositorioProduto repositorioProduto)
         {
             repositorioConta = repositorio;
+            this.repositorioMesa = repositorioMesa;
             this.repositorioGarcom = repositorioGarcom;
             this.repositorioProduto = repositorioProduto;
         }
@@ -30,10 +33,11 @@ namespace ControleDeBar.WinApp.ModuloConta
 
         public override void Adicionar()
         {
+            List<Mesa> mesasCadastradas = repositorioMesa.SelecionarTodos();
             List<Garcom> garconsCadastrados = repositorioGarcom.SelecionarTodos();
             List<Produto> produtosCadastrados = repositorioProduto.SelecionarTodos();
 
-            TelaContaForm telaConta = new TelaContaForm(garconsCadastrados, produtosCadastrados);
+            TelaContaForm telaConta = new TelaContaForm(mesasCadastradas, garconsCadastrados, produtosCadastrados);
 
             telaConta.CarregarProdutos(produtosCadastrados);
 
@@ -55,10 +59,11 @@ namespace ControleDeBar.WinApp.ModuloConta
 
         public override void Editar()
         {
+            List<Mesa> mesasCadastradas = repositorioMesa.SelecionarTodos();
             List<Garcom> garconsCadastrados = repositorioGarcom.SelecionarTodos();
             List<Produto> produtosCadastrados = repositorioProduto.SelecionarTodos();
 
-            TelaContaForm telaConta = new TelaContaForm(garconsCadastrados, produtosCadastrados);
+            TelaContaForm telaConta = new TelaContaForm(mesasCadastradas, garconsCadastrados, produtosCadastrados);
 
             int idSelecionado = tabelaConta.ObterRegistroSelecionado();
 
@@ -85,7 +90,7 @@ namespace ControleDeBar.WinApp.ModuloConta
 
             Conta contaEditado = telaConta.Conta;
 
-            repositorioConta.Editar(contaSelecionado.Id, contaEditado);
+            repositorioConta.Editar(contaSelecionado, contaEditado);
 
             CarregarContas();
 
@@ -96,7 +101,6 @@ namespace ControleDeBar.WinApp.ModuloConta
 
         public override void Excluir()
         {
-
             int idSelecionado = tabelaConta.ObterRegistroSelecionado();
 
             Conta contaSelecionado =
@@ -123,7 +127,7 @@ namespace ControleDeBar.WinApp.ModuloConta
             if (resposta != DialogResult.Yes)
                 return;
 
-            repositorioConta.Excluir(contaSelecionado.Id);
+            repositorioConta.Excluir(contaSelecionado);
 
             CarregarContas();
 

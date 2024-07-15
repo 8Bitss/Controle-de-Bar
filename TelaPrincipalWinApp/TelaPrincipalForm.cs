@@ -7,7 +7,7 @@ using ControleDeBar.Infra.Orm.ModuloGarcom;
 
 using ControleDeBar.WinApp.ModuloConta;
 using ControleDeBar.Dominio.ModuloConta;
-using ControleDeBar.Infra.Memoria.ModuloConta;
+using ControledeBar.Infra.Orm.ModuloConta;
 
 using ControleDeBar.WinApp.ModuloProduto;
 using ControleDeBar.Dominio.ModuloProduto;
@@ -48,7 +48,7 @@ namespace TelaPrincipalWinApp
             repositorioProduto = new RepositorioProdutoEmOrm(dbContext);
            
             repositorioGarcom = new RepositorioGarcomEmOrm(dbContext);
-            repositorioConta = new RepositorioContaEmMemoria();
+            repositorioConta = new RepositorioContaEmOrm(dbContext);
             #endregion
         }
 
@@ -97,7 +97,7 @@ namespace TelaPrincipalWinApp
 
         private void contaMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorConta(repositorioConta, repositorioGarcom, repositorioProduto);
+            controlador = new ControladorConta(repositorioConta, repositorioMesa, repositorioGarcom, repositorioProduto);
 
             ConfigurarTelaPrincipal(controlador);
         }
